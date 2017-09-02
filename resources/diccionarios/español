@@ -1,0 +1,56 @@
+Algoritmo genético en Scala
+
+Introducción
+Scala es un lenguaje de programación moderno multi-paradigma basado en el paradigma de programación funcional, diseñado para expresar patrones de programación comunes de una forma concisa, elegante, y de tipado seguro. Integra todas las características de lenguajes orientados a objetos y funcionales lo que lo hace el lenguaje funcional más moderno y potente actualmente.  
+Scala es ideal para integrar programación funcional junto con el JDK de Java, de tal forma que se pueden generar módulos en Scala y módulos en Java e integrarlos en una aplicación.  
+Las ventajas de utilizar Scala en esta integración son varias, entre algunas destacables se encuentran:
+•	Como las "variables" son inmutables, no existen efectos colaterales en el código.
+•	La depuración es más sencilla. El trabajo de pruebas se reduce a probar unidades pequeñas de código (funciones) que no son alterables desde fuera.
+•	Facilita la concurrencia ya que los datos son inmutables. No habrá bloqueos.
+Para el problema planteado he decidido utilizar Scala dentro del JDK 8 de Java con el fin de probar la eficacia de este lenguaje para resolver un problema tan importante como es este algoritmo genético.
+
+Rúbrica del ejercicio
+El alumno deberá explicar, analizar, implementar y evaluar una máquina evolutiva basada en algoritmos genéticos. La máquina evolutiva deberá evolucionar a 30 unos en uno o varios de sus cromosomas (función objetivo), se generara una población inicial de 50 cromosomas, cada cromosoma contiene una longitud de 30 genes (cada gen representa un 1 o un 0 en el cromosoma y es generado aleatoriamente). La selección se hará por ruleta, el cruzamiento se efectuara inicialmente con probabilidad de cruza pc = 0.70 y la mutación se efectuara con una probabilidad de mutación pm = 0.0555.
+
+Selección
+Las células de esta solución se seleccionan sobre la base de un muestreo universal estocástico que puede evitar problemas con enfoques como la selección de ruedas de la ruleta cuando se trata de células que tienen puntajes de aptitud muy altos que saturan el espacio candidato.
+Se realizan 10 rondas, cada una seleccionando una célula aleatoria de la población. Entonces la célula más apta es seleccionada de la población. Esto selecciona una célula “sana”, pero también permite una población diversa, ya que hay un potencial para una célula más débil que se seleccionó que podría contener información genética útil para la posterior recombinación.
+Al evolucionar a la población en modo "elitista", la célula más fuerte se mantiene de la generación de la población anterior y se agrega a la nueva generación. Esto asegura que la siguiente generación es al menos tan adecuada como la más apta de la generación anterior.
+
+ENTREVISTA A MARÍA LUISA DE LA GARZA, ESPECIALISTA EN MÚSICA POPULAR
+
+¿Qué papel1 tiene la mujer en los corridos?
+
+Históricamente ha habido mujeres compositoras de corridos, también mujeres que han cantado corridos; a veces con letras como si fueran varones, a veces con letras de mujeres. Así que la mujer no está desligada2 del corrido ni como artista, ya sea compositora o cantante, ni como personaje. Camelia la Texana es de las más famosas, pero no es, sin duda, la única. Ha habido mujeres narcotraficantes importantes, las hay, a las que se les dedican corridos también. No son la mayoría, porque es un negocio predominantemente de hombres. Ahora bien, con pena3 debo decir que sigue intacta la tradición de considerar a las mujeres como trofeos, como objetos para presumir4…, y hay muchos corridos donde solo se habla, o se equipara5 a la mujer con un bien más que el poderoso posee. Entonces, dicen muchos “traigo mi botella de alcohol preferido, mis armas favoritas y mis mujeres guapas”. Entonces, la cosificación6 de la mujer permanece: el machismo… La cultura de la violencia hoy, pues, refuerza actividades caprichosas7 en las que las mujeres  pues tienen poca voz y su situación y condición en el México de hoy, lamentablemente, no es mucho mejor que en otro tiempo.
+
+¿Cuál es la situación actual en Ciudad Juárez con las mujeres?
+
+Ha bajado el nombre de Ciudad Juárez,  pero  lamentablemente no ha mejorado la situación de las mujeres en general en México. La violencia  afecta mucho a las mujeres, no solo porque son blanco8 de acciones criminales, también sufren la pérdida por la muerte de sus hijos, de sus compañeros…
+
+Me parece que si no se escucha más hablar de Ciudad Juárez es porque periodísticamente9 es un tema que ha perdido interés. Parte de esa realidad se ve en todo el país. Hay feminicidios10 en muchos estados de la república constantemente.
+
+¿Crees que este tema tiene que ver con el machismo en México?
+
+La subordinación de la mujer tiene que ver con el machismo, no solo en México. La condición de la mujer como un actor social subordinado es parte de nuestro sistema económico, político-social occidental. La condición de subordinación de la mujer, de algún modo, sostiene nuestro sistema capitalista neoliberal donde muchos de los privilegios se basan en dobles, triples jornadas de las mujeres, entonces, estamos lejos de la igualdad, y en México muy lejos todavía.
+
+En un tiempo las mujeres fueron diosas de ciudades, pero no tenían derecho a ser ciudadanas1, reinaron como vírgenes en iglesias gobernadas por hombres y dirigieron hogares y empresas, pero no les estaba permitido votar. Hasta que un día comenzaron a poner sobre el papel todo aquello que les daba derecho a ser ciudadanas, a seguir los dictados2 de su propia alma y a decidir quiénes gobernaban en sus ciudades.
+
+Corría el año 1848 cuando dos mujeres, Lucretia Mott y Elizabeth Cady Stanton, organizaron la primera Convención para el Derecho de las Mujeres, en Seneca Falls (EE. UU.). De aquella reunión surgió3 un documento, al que llamaron Declaración de Sentimientos, en el que denunciaban las restricciones que la ley imponía a las mujeres. Entre ellas, no poder votar, ni presentarse a elecciones, ni ocupar cargos públicos o asistir a reuniones políticas. El escrito establecía tres fundamentos4 para lograr la igualdad real entre sexos: educación no discriminatoria, participación en la esfera pública e igualdad ante la ley.
+
+Siguiendo las líneas trazadas por la convención de Seneca Falls, la pensadora Harriet Taylor Mill escribió en 1851 el ensayo5 La emancipación de la mujer, en el que reivindicaba los derechos de la mujer por encima de supuestas diferencias naturales y prejuicios6 culturales. No era la primera vez que las mujeres protestaban por la negación de sus derechos y los ponían sobre el papel. Un siglo antes, la dramaturga y pensadora francesa Olympe de Gouges proponía que “la mujer que tiene el derecho de subir al cadalso7 debe tener también el de subir a la tribuna”. Bajo esta premisa redactó la Declaración de los Derechos de la Mujer y de la Ciudadana, que no era otra cosa que una copia de la Declaración de los Derechos del Hombre y del Ciudadano de 1789. En ella matizaba8 algo que los revolucionarios franceses se habían dejado en el tintero9: la igualdad de derechos para ambos sexos.
+
+Por su parte, Mary Wollstonecraft publicaba en Inglaterra, en 1792, el libro titulado Vindicación de los derechos de la mujer, en el que pedía al Estado que emprendiera10 reformas en las leyes, el matrimonio y la educación. Con un sistema de enseñanza igualitaria, pensaba Mary, las mujeres podrían demostrar su capacidad para realizar las mismas tareas que el hombre, cosa que echaría por tierra11 el prejuicio de que su función social debía limitarse al cuidado del hogar. Y estaba en lo cierto12, pues un siglo más tarde la Revolución Industrial, que llevó a la mujer al trabajo remunerado13, propició14 una sucesión de cambios en cadena que ya no tendría marcha atrás.
+
+No lo tuvieron fácil las primeras revolucionarias cuando se enfrentaron a prejuicios grabados a fuego15 en la mente colectiva durante siglos. Pero poco a poco, al tiempo que los países iban evolucionando, las reivindicaciones de estas mujeres fueron convirtiéndose en ley.
+
+Sin embargo, en los países con falta de libertades, las mujeres han encontrado dificultades para acceder a las universidades, y a empleos bien remunerados y estables. Esto ha impedido su presencia en las decisiones jurídicas16, políticas, económicas y sociales que esos países necesitan para evolucionar.
+
+De hecho, hoy podría decirse que el nivel de desarrollo de un país o de una cultura puede medirse por la posición que ocupa y el trato17 que recibe su población femenina.
+
+En todo el planeta es creciente la participación de mujeres en puestos de alta responsabilidad política, social y económica. Esto es un avance, aunque algunas veces sea más teórico que práctico y varíe enormemente de una sociedad a otra. Por poner un ejemplo, en Europa la diferencia de salarios entre hombres y mujeres, en el mismo puesto de trabajo, es de un 20%. Esta brecha18 salarial tiene que ver también con la discriminación a la hora de acceder a puestos de responsabilidad y al hecho de que las profesiones mayoritariamente ejercidas19 por mujeres son las peor pagadas.
+
+Suecia es el país que ha logrado una mayor igualdad en el campo laboral. ¿Cómo lo ha conseguido? Siguiendo el argumento que planteaban20 las primeras revolucionarias, los suecos decidieron reformar drásticamente sus libros de texto, la educación de los padres, las políticas de impuestos y la legislación relativa al matrimonio y al divorcio, como punto de partida para fomentar la igualdad de la mujer en el mercado laboral. Además de prestar atención a las necesidades específicas de las madres trabajadoras, con programas de ayuda y asesoría para aquellas que se reincorporan al mercado de trabajo tras un periodo de maternidad.
+
+En la actualidad, Algo anda mal alrededor de una veintena de mujeres ocupan posiciones de poder político en el mundo, desde las reinas Isabel II de Inglaterra, Beatriz de Holanda y Margarita II de Dinamarca, hasta la canciller alemana Angela Merkel, pasando por la primera ministra croata Jadranka Kosor, la brasileña Dilma Rousseff, la argentina Cristina Kirchner y la presidenta de Liberia Ellen Johnson Sirleaf, entre otras. Pero esta presencia femenina no garantiza la plena igualdad de derechos y oportunidades entre hombres y mujeres en la práctica. Porque, para que esto ocurra, toda la sociedad tiene que estar involucrada en el proceso, independientemente de quien gobierne. Como dice un proverbio africano, “para educar a un niño hace falta un pueblo entero”.
+
+A pesar de todo lo que se ha conseguido, aún queda mucho por hacer; la revolución no habrá logrado su cometido21 mientras continúe habiendo en el mundo hábitos que llevan a la pérdida del respeto por la mujer como ser humano, entre ellos, la mutilación genital femenina (135 millones de mujeres y niñas la sufren en el mundo), la violación22 (una de cada tres mujeres ha sido golpeada, coaccionada sexualmente o ha sufrido otro tipo de abuso en su vida) y la prostitución (cuatro millones de personas la ejercen).
