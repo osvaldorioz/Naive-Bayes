@@ -15,7 +15,7 @@ import java.util.Map;
 import javax.swing.ImageIcon;
 import uc.unidad.cuatro.nb.classifiers.NaiveBayes;
 import uc.unidad.cuatro.nb.dataobjects.NaiveBayesKnowledgeBase;
-import uc.unidad.cuatro.nb.main.NaiveBayesExample;
+
 
 /**
  *
@@ -40,11 +40,11 @@ public class NaiveBayesFrm extends javax.swing.JFrame {
         master = new ImageIcon(newimg);
         this.jButton2.setIcon(master);
         
-        trainingFiles.put("Русский язык", NaiveBayesExample.class.getResource("/diccionarios/ruso"));
-        trainingFiles.put("English language", NaiveBayesExample.class.getResource("/diccionarios/english"));
-        trainingFiles.put("Langue française", NaiveBayesExample.class.getResource("/diccionarios/french"));
-        trainingFiles.put("Deutsche Sprache", NaiveBayesExample.class.getResource("/diccionarios/deutch"));
-        trainingFiles.put("Español", NaiveBayesExample.class.getResource("/diccionarios/español"));
+        trainingFiles.put("Русский язык", NaiveBayesFrm.class.getResource("/diccionarios/ruso"));
+        trainingFiles.put("English language", NaiveBayesFrm.class.getResource("/diccionarios/english"));
+        trainingFiles.put("Langue française", NaiveBayesFrm.class.getResource("/diccionarios/french"));
+        trainingFiles.put("Deutsche Sprache", NaiveBayesFrm.class.getResource("/diccionarios/deutch"));
+        trainingFiles.put("Español", NaiveBayesFrm.class.getResource("/diccionarios/español"));
         try{
             for(Map.Entry<String, URL> entry : trainingFiles.entrySet()) {
                 trainingExamples.put(entry.getKey(), readLines(entry.getValue()));
